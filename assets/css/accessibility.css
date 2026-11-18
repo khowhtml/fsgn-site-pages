@@ -1,0 +1,474 @@
+/* Loaded last. Every override is scoped to the reversible reading mode. */
+body.accessibility-mode {
+  --blue: #000;
+  --navy: #000;
+  --ink: #000;
+  --muted: #000;
+  --line: #000;
+  --pale: #fff;
+  --bg: #fff;
+  --white: #fff;
+  color: #000 !important;
+  background: #fff !important;
+  font-size: var(--accessibility-font-size, 22px) !important;
+  line-height: 1.55 !important;
+}
+
+.accessibility-mode * {
+  color: #000 !important;
+  background-color: #fff !important;
+  background-image: none !important;
+  border-color: #000 !important;
+  box-shadow: none !important;
+  text-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  animation: none !important;
+  transition: none !important;
+  min-width: 0;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+  white-space: normal !important;
+}
+
+.accessibility-mode [data-accessibility-text] {
+  font-size: var(--accessibility-font-size, 22px) !important;
+  line-height: 1.55 !important;
+  letter-spacing: normal !important;
+  text-overflow: clip !important;
+  -webkit-line-clamp: unset !important;
+}
+
+.accessibility-mode :is(h1, h2, h3, h4, h5, h6),
+.accessibility-mode :is(h1, h2, h3, h4, h5, h6) > span {
+  line-height: 1.3 !important;
+}
+
+/* Remove decorative shapes and CSS-only replacement labels. Their original
+   text remains in the DOM and is now displayed at its enlarged measured size. */
+.accessibility-mode *::before,
+.accessibility-mode *::after {
+  content: none !important;
+  box-shadow: none !important;
+}
+
+.accessibility-mode
+  :is(
+    .hero-art,
+    .hero-orb,
+    .hero-person,
+    .hero-data,
+    .hero-formula,
+    .person-graph,
+    .data-bars,
+    .faculty-overview__words,
+    .news-feature__words,
+    .news-card-cover,
+    .department-hero-art,
+    .department-hero-media,
+    .secondary-hero-art,
+    .secondary-hero-media,
+    .secondary-hero__art,
+    .article-cover,
+    main img,
+    main picture,
+    main video,
+    main canvas
+  ) {
+  display: none !important;
+}
+
+.accessibility-mode :is(svg, svg *) {
+  background: transparent !important;
+}
+
+.accessibility-mode :is(.faculty-logo, .university-crest img) {
+  filter: grayscale(1) contrast(2);
+}
+
+/* Let enlarged text determine each section's height and each card's width.
+   Existing mobile/desktop content visibility remains intact. */
+.accessibility-mode :is(main, .site-header, .site-footer),
+.accessibility-mode
+  :is(main, .site-header, .site-footer)
+  :is(
+    header,
+    section,
+    article,
+    aside,
+    nav,
+    div,
+    ul,
+    ol,
+    li,
+    a,
+    button,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    summary,
+    details
+  ) {
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  max-width: 100% !important;
+  overflow: visible !important;
+  grid-template-columns: minmax(0, 1fr) !important;
+  flex-wrap: wrap !important;
+  column-gap: 24px !important;
+  row-gap: 20px !important;
+}
+
+.accessibility-mode
+  :is(main, .site-header, .site-footer)
+  :is(
+    header,
+    section,
+    article,
+    aside,
+    nav,
+    div,
+    ul,
+    ol,
+    li,
+    a,
+    button,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    summary,
+    details
+  ) {
+  position: static !important;
+  inset: auto !important;
+  transform: none !important;
+}
+
+.accessibility-mode .container {
+  width: calc(100% - 48px) !important;
+  max-width: 1200px !important;
+}
+
+.accessibility-mode a {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1.5px;
+}
+
+.accessibility-mode :is(button, input, textarea, select, summary, .button) {
+  max-width: 100% !important;
+  min-height: 48px !important;
+  height: auto !important;
+  padding: 12px 16px !important;
+  border: 2px solid #000 !important;
+  border-radius: 3px !important;
+  text-align: start;
+}
+
+.accessibility-mode
+  :is(button, a, input, textarea, select, summary):focus-visible {
+  outline: 3px solid #000 !important;
+  outline-offset: 4px !important;
+}
+
+.accessibility-mode :is(a, button, summary):hover {
+  text-decoration: underline !important;
+  text-decoration-thickness: 3px !important;
+}
+
+.accessibility-mode :is([aria-current], button[aria-pressed="true"]) {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 3px !important;
+}
+
+.accessibility-mode [data-department-tab] {
+  padding: 12px 16px;
+  border: 2px solid #000;
+  border-radius: 0;
+}
+
+.accessibility-mode [data-department-tab][aria-selected="true"] {
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  text-decoration-thickness: 3px !important;
+}
+
+.accessibility-mode button:disabled {
+  opacity: 1;
+  border-style: dashed !important;
+}
+
+.accessibility-banner:not([hidden]) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  border-bottom: 2px solid #000;
+}
+
+.accessibility-mode .accessibility-banner > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.accessibility-mode .utility-bar {
+  padding-block: 16px;
+  border-bottom: 1px solid #000;
+}
+
+.accessibility-mode .identity {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-block: 24px;
+}
+
+.accessibility-mode :is(.faculty-brand, .university-crest) {
+  flex: 0 0 auto;
+  margin: 0 !important;
+}
+
+.accessibility-mode .identity-title {
+  flex-basis: 100%;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0;
+}
+
+.accessibility-mode .accessibility-toggle {
+  display: inline-flex !important;
+  align-items: center;
+  margin: 0 !important;
+  width: auto !important;
+}
+
+.accessibility-mode .search-toggle,
+.accessibility-mode .menu-toggle {
+  margin: 0 !important;
+  width: auto !important;
+  min-width: 54px !important;
+}
+
+.accessibility-mode .menu-toggle span {
+  width: 24px !important;
+  height: 3px !important;
+  background: #000 !important;
+}
+
+.accessibility-mode .main-nav {
+  padding-block: 20px;
+  flex-direction: column;
+  gap: 20px !important;
+}
+
+.accessibility-mode .main-nav > *,
+.accessibility-mode .main-nav .nav-admission {
+  width: 100%;
+  margin: 0 !important;
+}
+
+.accessibility-mode .departments-menu {
+  display: block;
+}
+
+.accessibility-mode .departments-dropdown {
+  width: 100% !important;
+  margin-top: 16px;
+}
+
+.accessibility-mode .home-hero {
+  padding: 32px;
+  border: 2px solid #000;
+}
+
+.accessibility-mode .home-hero > :not([hidden]) {
+  width: auto !important;
+  margin: 0 0 28px !important;
+}
+
+.accessibility-mode .hero-copy {
+  padding: 0 !important;
+}
+
+.accessibility-mode .hero-description br {
+  display: block !important;
+}
+
+.accessibility-mode
+  :is(.hero-actions, .hero-actions .button, .hero-description) {
+  width: auto !important;
+  max-width: 100% !important;
+}
+
+.accessibility-mode .hero-actions {
+  align-items: flex-start;
+  gap: 24px !important;
+  margin-bottom: 0 !important;
+}
+
+.accessibility-mode
+  :is(
+    .audience-links > a,
+    .program-tile,
+    .glass-panel,
+    .faculty-person,
+    .department-person,
+    .department-contact,
+    .contact-strip,
+    .contacts-direction,
+    .education-masters__card,
+    .education-admission,
+    .department-quick-links
+  ) {
+  border: 1px solid #000;
+  padding: 24px;
+}
+
+.accessibility-mode
+  :is(
+    .audience-links .arrow,
+    .program-tile > .arrow,
+    .contacts-direction > .arrow
+  ) {
+  display: none;
+}
+
+.accessibility-mode :is(.all-news, .department-map-link) {
+  margin-top: 24px !important;
+}
+
+.accessibility-mode :is(.departments-list a, .contacts-department-list a) {
+  gap: 16px !important;
+}
+
+.accessibility-mode .document-list li,
+.accessibility-mode .document-list button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) !important;
+  gap: 12px !important;
+  margin-block: 12px;
+}
+
+.accessibility-mode .document-format {
+  display: block;
+  padding: 0;
+  width: auto;
+  flex-basis: auto !important;
+  white-space: nowrap !important;
+}
+
+.accessibility-mode .home-news-grid article {
+  display: block !important;
+  border-radius: 0 !important;
+}
+
+.accessibility-mode .site-footer {
+  padding-block: 32px;
+  border-top: 2px solid #000;
+}
+
+.accessibility-mode .footer-main {
+  padding-top: 0;
+  gap: 32px !important;
+}
+
+.accessibility-mode .footer-bottom {
+  margin-top: 32px;
+  padding-top: 24px;
+  gap: 20px !important;
+}
+
+.accessibility-mode :is(.site-dialog, .mobile-menu-dialog) {
+  width: min(900px, calc(100% - 32px));
+  max-width: calc(100% - 32px);
+  height: auto;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 24px;
+  border: 2px solid #000;
+  overflow: auto;
+}
+
+.accessibility-mode dialog::backdrop {
+  background: rgb(0 0 0 / 75%);
+  backdrop-filter: none;
+}
+
+.accessibility-mode .dialog-close {
+  position: static;
+  display: block;
+  margin: 0 0 24px auto;
+}
+
+.accessibility-mode :is(.site-dialog h2, .site-dialog input) {
+  width: 100%;
+  max-width: 100%;
+  margin-right: 0;
+}
+
+.accessibility-mode .search-result__description {
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: unset;
+}
+
+.accessibility-mode .mobile-menu-dialog .mobile-departments a {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.accessibility-mode .mobile-menu-heading {
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .accessibility-mode .container {
+    width: calc(100% - 32px) !important;
+  }
+
+  .accessibility-mode
+    :is(
+      .home-hero,
+      .glass-panel,
+      .faculty-overview,
+      .education-programs,
+      .contacts-overview,
+      .news-feature,
+      .department-education-panel,
+      .audience-links > a,
+      .program-tile,
+      .faculty-person,
+      .department-person,
+      .department-contact,
+      .contact-strip,
+      .contacts-direction,
+      .education-masters__card,
+      .education-admission,
+      .department-quick-links
+    ) {
+    padding: 16px;
+  }
+
+  .accessibility-mode .home-news .section-heading h2 {
+    white-space: normal !important;
+  }
+
+  .accessibility-mode .mobile-footer-links {
+    gap: 24px;
+    padding-block: 24px;
+  }
+}
