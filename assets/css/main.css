@@ -1603,3 +1603,53 @@ main:focus {
     line-height: 1.75;
   }
 }
+
+/* Dated source notes and recovered documents use the existing reading grid. */
+.archive-notice {
+  margin: 0 0 28px;
+  padding: 16px 20px;
+  border-left: 3px solid #b9cee8;
+  background: #f5f8fc;
+  color: #405b75;
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+.archive-notice strong { color: var(--navy); }
+.archive-source {
+  margin: 18px 0 26px;
+  color: #4d6278;
+  font-size: 14px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.archive-source a { text-decoration: underline; text-underline-offset: 3px; }
+.archive-chronology { margin: 20px 0; }
+.archive-chronology > div {
+  display: grid;
+  grid-template-columns: minmax(110px, .7fr) minmax(0, 1.3fr);
+  gap: 10px 24px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 17px;
+  line-height: 1.6;
+}
+.archive-chronology dt { font-weight: 700; }
+.archive-chronology dd { margin: 0; }
+.archive-details { margin-top: 24px; padding-block: 16px; border-top: 1px solid var(--line); }
+.archive-details summary { cursor: pointer; font-size: 18px; font-weight: 700; line-height: 1.5; }
+.archive-details > p { font-size: 17px; line-height: 1.65; }
+.document-list li > div { min-width: 0; overflow-wrap: anywhere; }
+.document-list a { text-decoration: underline; text-underline-offset: 3px; }
+.document-meta { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.news-date { margin: 10px 0; color: var(--muted); font-size: 15px; line-height: 1.5; }
+.contacts-overview__card dd, .department-contact-details dd { overflow-wrap: anywhere; }
+@media (max-width: 480px) {
+  .archive-chronology > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .archive-notice { padding: 14px 16px; }
+}
+.accessibility-mode .archive-notice,
+.accessibility-mode .archive-source,
+.accessibility-mode .document-meta,
+.accessibility-mode .news-date { color: #000; background: #fff; border-color: #000; }
+.accessibility-mode .archive-notice strong { color: #000; }
